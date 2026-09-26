@@ -57,8 +57,8 @@
       "preview_bucket_name": "sink",
       "bucket_name": "sink" // Override with DEPLOY_R2_BUCKET_NAME
     }
-  ],
-  "triggers": {
-    "crons": ["0 0 * * *"] // Run backup task daily at 00:00 UTC
-  }
+  ]
+  // Backup cron removed on 2026-09-26: the Cloudflare Workers Free plan allows only 5
+  // cron triggers per account and the quota was full. This slot was freed for SubsTracker.
+  // To restore the daily D1 -> R2 backup, re-add: "triggers": { "crons": ["0 0 * * *"] }
 }
