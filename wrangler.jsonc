@@ -13,12 +13,15 @@
   ],
   "keep_vars": true,
   "upload_source_maps": true,
+  // Observability disabled on 2026-09-26: the Workers Free plan caps observability
+  // events at 200k/day and this account was over budget. Keep the dashboard in sync
+  // with this file, otherwise the next deploy re-enables logs and traces.
   "observability": {
     "logs": {
-      "enabled": true
+      "enabled": false
     },
     "traces": {
-      "enabled": true
+      "enabled": false
     }
   },
   "ai": {
